@@ -17,8 +17,8 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_babel import Babel, lazy_gettext as _l
 # from flask_bcrypt import Bcrypt
 # from schema.dbModule import DataBase
-from schema.user import UserDb
-# from schema.model import User
+from schema.userdb import UserDb
+
 # import token
 import datetime
 from config import Config
@@ -38,7 +38,6 @@ db = SQLAlchemy(app)
 @babel.localeselector
 def get_locale():
     print(f'{request.accept_languages.best_match(app.config["LANGUAGES"].keys())}')
-
     return request.accept_languages.best_match(app.config['LANGUAGES'].keys())
 
 @app.route('/')

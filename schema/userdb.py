@@ -27,6 +27,7 @@ class UserDb:
             return result.fetchall()[0][0]
 
 
+
 def close(self):
     self.cursor.close()
     print("User db is closed.")
